@@ -28,7 +28,8 @@ export async function middleware(request: NextRequest) {
     if( request.nextUrl.pathname.startsWith('/auth'))           pathname = '/auth/login';  
     if( request.nextUrl.pathname.startsWith('/dashboard'))      pathname = '/dashboard';
 
-    const token = request.cookies.get('authjs.session-token')?.value;
+    const salt = process.env.NEXT_PUBLIC_STAGE === 'dev' ? 'authjs.session-token' : '__Secure-authjs.session-token';
+    const token = request.cookies.get( salt )?.value;
     
     if( token ) {
 
