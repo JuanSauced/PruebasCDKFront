@@ -34,7 +34,6 @@ export async function middleware(request: NextRequest) {
     if( token ) {
 
         const secret = 'xtIruXRXzfM8nyyq7uQ7ubym7Y4O7UBjs1kVEZvfywg=';
-        const salt = "authjs.session-token";
         const decoded = await decode({ token, secret, salt }) as any;
         const { dashboard } = decoded.data.resp as IUser;
         const page = pages[ pathname ];
