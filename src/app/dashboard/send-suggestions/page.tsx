@@ -1,4 +1,4 @@
-import { Box, DashboardTitle, Options } from "@/components";
+import { Box, DashboardTitle, Options, SendSuggestions } from "@/components";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ export default function SendSuggestionsPage() {
         <Box>
             <DashboardTitle title="Buzón de comentarios y sugerencias"/>
             <div className="px-2 md:px-8 w-full">
-              
+            <SendSuggestions/>
             </div>
         </Box>
         <Options/>

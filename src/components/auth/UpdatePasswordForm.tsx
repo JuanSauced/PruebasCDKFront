@@ -1,5 +1,8 @@
 'use client';
 import useToggle from '@/hooks/useToggle';
+import { userChangePassword } from '@/services';
+import { confirmPasswordValidator } from '@/validators';
+import { deleteCookie, getCookie } from 'cookies-next';
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
@@ -20,7 +23,30 @@ export const UpdatePasswordForm = () => {
     const { push } = useRouter();
 
     const onSubmit: SubmitHandler<Inputs> = async({ newPassword, confirmNewPassword }) => {
+      try {
+        
+        if( !await confirmPasswordValidator({ newPassword, confirmNewPassword })) return;
+        setIsSubmitted( true );
 
+        const cookieValue = await getCookie('userData');
+        const userData = JSON.parse(cookieValue || '{}');
+        const { username, confirmationCode, type } = userData;
+
+        if( type === 'resetPassword' ){
+
+        } else {
+          await userChangePassword({ username, password: newPassword });
+        };
+
+        deleteCookie('userData');
+        push('/auth/login');
+        setIsSubmitted( false );
+
+      } catch (error) {
+        
+        console.log(error);
+
+      }
     };
 
     const onUpdatePassword = async({ username, confirmationCode, newPassword }: any) => {

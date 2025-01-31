@@ -1,6 +1,6 @@
 import { Box, BoxWidget, DashboardTitle, Options } from "@/components";
 import { Metadata } from "next";
-import { AdminTickets } from "./components/AdminTickets";
+import { AdminTickets } from "./components";
 
 export const metadata: Metadata = {
     title: 'Administración',

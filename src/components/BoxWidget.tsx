@@ -14,7 +14,7 @@ export const BoxWidget = ({ BoxItems, type }: Props) => {
     return (
         <div className='w-full mb-10'>
             <h2 className='section-title text-sm text-center md:text-start'>Estadísticas mensuales:</h2>
-            <div className='boxWidget flex flex-wrap gap-2 mt-4 justify-between'>
+            <div className='boxWidget flex flex-wrap gap-2 mt-4 items-center justify-center'>
 
                 <div className={`card1 w-[150px] md:w-44 px-2 py-5 flex  flex-col items-center gap-2 rounded-lg `}>
                     <p className='text-lg md:text-3xl'>{ type === 'admin' ? BoxItems?.attended_clients || 0 : BoxItems?.attended_hours || 0 }</p>

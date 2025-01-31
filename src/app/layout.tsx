@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { montserrat } from "@/config";
+import { Providers } from "@/providers/Providers";
 
 export const metadata: Metadata = {
   title: {
@@ -12,10 +13,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html>
+    <html suppressHydrationWarning>
       {/* <link rel="icon" href="/favicon.png" sizes="64x64" /> */}
       <body className={`${ montserrat.className } theme-evolvenx`}>
-        { children }
+        <Providers>
+          { children }
+        </Providers>
       </body>
     </html>
   );

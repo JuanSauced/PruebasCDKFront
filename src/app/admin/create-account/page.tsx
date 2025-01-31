@@ -1,4 +1,4 @@
-import { Box, DashboardTitle, Options } from "@/components";
+import { Box, DashboardTitle, Options, UserForm } from "@/components";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -16,10 +16,13 @@ export default function CreateAccountPage() {
         <Box>
             <DashboardTitle title="Crear cuenta para admin o agente"/>
             <div className="px-2 md:px-8 w-full">
-              
+              <UserForm
+                type="new"
+                userType="admin"
+              />
             </div>
         </Box>
         <Options/>
     </div>
   );
-}
+} 

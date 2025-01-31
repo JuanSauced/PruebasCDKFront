@@ -23,6 +23,9 @@
     --color-18: #E0E0E0;
     --color-19: #85BEED;
     --color-20: #677A8D;
+    --color-21: #7691C4;
+    --color-22: #989898;
+    --color-23: #0E89B9;
 
     /*Text*/
     .text-1 { color: var(--color-1); };
@@ -65,6 +68,8 @@
     .background-17 { background-color: var(--color-17); };
     .background-18 { background-color: var(--color-18); };
     .background-19 { background-color: var(--color-19); };
+
+    background-color: var(--color-2);
 
     .sidebar {
         background-color: var(--color-15);
@@ -112,6 +117,10 @@
     .option {
         background-color: var(--color-9);
     };
+
+    .subtitle{
+        color:var(--color-21);
+    }
 
     /* Autenticación */
     .auth {
@@ -206,25 +215,144 @@
             color:var(--color-13);
         }
     }
-    
-    @keyframes fadeIn {
-        0% {opacity: 0;}
-        100% {opacity: 1;}
+
+    /*User Form*/
+    .user-form h2 { color: var(--color-6); }
+    .user-form .active-since { color: var(--color-6); }
+
+    /*Input*/
+    .input {
+        label {color: var(--color-21) }
+        input::placeholder { color: var(--color-5) }
+        input { box-shadow: 1px 1px 5px 1px var(--color-18); color: var(--color-5);}
+        input:disabled { background-color: var(--color-1); }
     };
-    
-    @-webkit-keyframes fadeIn {
-        0% {opacity: 0;}
-        100% {opacity: 1;}
+    .input button { color: var(--color-16); background-color: #f3f4f6;  }
+
+    /*Textarea*/
+    .textarea {
+        label {color: var(--color-21) }
+        textarea::placeholder { color: var(--color-5) }
+        textarea { box-shadow: 1px 1px 5px 1px var(--color-18); color: var(--color-5);}
+        textarea:disabled { background-color: var(--color-1); }
     };
+
+    /*Select*/
+    .select span { color: var(--color-5) }
+    .select .input { box-shadow: 1px 1px 5px 1px var(--color-18); color: var(--color-5);}
+    .select .dropdown { background-color: var(--color-15); }
+    .select .dropdown-text { color: var(--color-1); }
+
+    /*Role Selector*/
+    .role-selector label { color: var(--color-6); }
+    .role-selector p { color: var(--color-6); }
+    .role-selector span { color: var(--color-5) }
+    .role-selector .input { box-shadow: 1px 1px 5px 1px var(--color-18); color: var(--color-5);}
+    .role-selector .dropdown { background-color: var(--color-15); }
+    .role-selector .dropdown-text { color: var(--color-1); }
+
+    /*Ticket Form*/
+    .upload-files span { color: var(--color-21); }
+    .upload-files button { color: var(--color-21); }
+
+    .upload-image label { color: var(--color-6); }
+    .upload-image span { color: var(--color-5); }
+    .upload-image button { color: var(--color-5); }
+
+    /*Ticket*/
+    .ticket-header p { color: var(--color-4) };
+    .send-message-ticket { border-top: 1px solid var(--color-9) };
+    .send-message-ticket input::placeholder { color: var(--color-5) }
+    .add-file { color: var(--color-23); }
+    .event span { color: var(--color-5) }
+    .event .line { background-color: var(--color-5) }
+    .message-text { color: var(--color-5); }
+    .ticket-creator { color: var(--color-21); }
+    .ticket-date { color: var(--color-5); }
+
+    /*Notification*/
+    .notification {
+        .notification-card{
+            background-color: var(--color-11);
+        }
+
+        .notification-img {
+          background: var(--color-9);
+        }
+        .headers {
+          color: var(--color-21);
+        }
     
-    .fade-in {
-        -webkit-animation-duration: 0.3s;
-        animation-duration: 0.3s;
-        -webkit-animation-fill-mode: both;
-        animation-fill-mode: both;
+        .seen {
+          color: var(--color-4);
+        }
     
-        -webkit-animation-name: fadeIn;
-        animation-name: fadeIn;
-    };
+        .not-seen {
+          color: var(--color-22);
+        }
+    
+        .notification-info {
+          color: var(--color-20);
+        }
+    
+        .pagination-info {
+          color: var(--text-pagination-info);
+        }
+        
+        .filter-color{
+            color: var(--color-5);
+        }
+    
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+} 
+
+@-webkit-keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.fade-in {
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
 
 }

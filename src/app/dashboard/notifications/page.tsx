@@ -1,4 +1,4 @@
-import { Box, DashboardTitle, Options } from "@/components";
+import { Box, DashboardTitle, Notifications, Options } from "@/components";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ export default function NotificationsPage() {
         <Box>
             <DashboardTitle title="Notificaciones"/>
             <div className="px-2 md:px-8 w-full">
-              
+              <Notifications/>
             </div>
         </Box>
         <Options/>

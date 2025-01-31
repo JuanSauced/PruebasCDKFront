@@ -1,4 +1,5 @@
 'use client';
+import { getCookie } from 'cookies-next';
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
@@ -14,10 +15,17 @@ export const ConfirmSignInForm = () => {
     const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
     const { push } = useRouter();
 
-    const onSubmit: SubmitHandler<Inputs> = async({ confirmationCode, username }: any) => {
+    const onSubmit: SubmitHandler<Inputs> = async({ confirmationCode }: any) => {
 
+        const email = getCookie('email');
+
+        try {
+            
+        } catch (error) {
+            
+        }
     };
-
+ 
     const handleCancel = () => push("/auth/login");
 
   return (

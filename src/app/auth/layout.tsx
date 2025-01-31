@@ -1,3 +1,4 @@
+import { auth } from "@/auth";
 import Image from "next/image";
 import Link from "next/link";
 import { RiFacebookFill, RiLinkedinFill, RiYoutubeFill } from "react-icons/ri";
@@ -9,7 +10,7 @@ const services = [
     { id: 4, text: 'Resuelva asesoría sobre su proyecto' },
  ];
 
-export default function AuthLayout({ children }: { children: React.ReactNode }) {
+export default async function AuthLayout({ children }: { children: React.ReactNode }) {
 
     const year = new Date().getFullYear();
 

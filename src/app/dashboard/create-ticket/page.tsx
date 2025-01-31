@@ -1,4 +1,4 @@
-import { Box, DashboardTitle, Options } from "@/components";
+import { Box, DashboardTitle, Options, TicketForm } from "@/components";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ export default function CreateTicketPage() {
         <Box>
             <DashboardTitle title="Crear un nuevo ticket"/>
             <div className="px-2 md:px-8 w-full">
-              
+              <TicketForm userType={"client"}/>
             </div>
         </Box>
         <Options/>

@@ -1,4 +1,4 @@
-import { Box, DashboardTitle, Options } from "@/components";
+import { Box, DashboardTitle, Options, UserForm } from "@/components";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -16,7 +16,10 @@ export default function ProfilePage() {
         <Box>
             <DashboardTitle title="Información de cuenta"/>
             <div className="px-2 md:px-8 w-full">
-              
+              <UserForm
+                type="update"
+                userType="customer"
+              />
             </div>
         </Box>
         <Options/>
